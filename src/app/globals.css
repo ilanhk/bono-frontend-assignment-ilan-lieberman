@@ -18,12 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -31,3 +26,51 @@ body {
     text-wrap: balance;
   }
 }
+
+.intro-section {
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  align-items: left; /* Align children to the left (start) */
+  text-align: left; /* Align text to the left */
+  
+  
+}
+
+.intro-fabs{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.causesselectioncontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px; /* Space between cards */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  .causesselectioncontainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+  }
+}
+
+.card-container {
+  position: relative; /* Ensure the position context for absolute positioning */
+}
+
+.fab-button {
+  position: absolute;
+  bottom: 10px; /* Adjust the distance from the bottom */
+  left: 10px; /* Adjust the distance from the left */
+}
+
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  margin-left: 12px;
+};
+
