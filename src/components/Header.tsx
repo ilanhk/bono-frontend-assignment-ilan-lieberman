@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 
 export default function Header() {
   return ( 
-    <div className="w-full absolute text-white z-10">
+    <div className="w-full  text-white z-10">
       <nav className="bg-black flex justify-between items-center p-4">
         <Link href="/" className="font-bold text-3xl">
           Home

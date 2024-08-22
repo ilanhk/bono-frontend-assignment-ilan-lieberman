@@ -29,11 +29,11 @@ body {
 
 .intro-section {
   display: flex;
-  flex-direction: column; /* Arrange children vertically */
-  align-items: left; /* Align children to the left (start) */
-  text-align: left; /* Align text to the left */
-  
-  
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+  padding: 20px;
+  color: black;
 }
 
 .intro-fabs{
@@ -42,11 +42,18 @@ body {
   gap: 10px;
 }
 
-.causesselectioncontainer {
+.cause-black-arrow{
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.causes-selection-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px; /* Space between cards */
 }
+
+
 
 /* Media query for mobile devices */
 @media (max-width: 600px) {
@@ -61,8 +68,8 @@ body {
 
 .fab-button {
   position: absolute;
-  bottom: 10px; /* Adjust the distance from the bottom */
-  left: 10px; /* Adjust the distance from the left */
+  bottom: 10px; 
+  left: 10px; 
 }
 
 
@@ -73,4 +80,6 @@ body {
   width: 300px;
   margin-left: 12px;
 };
+
+
 

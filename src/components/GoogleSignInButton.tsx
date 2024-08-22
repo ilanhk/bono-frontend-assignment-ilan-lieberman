@@ -1,4 +1,5 @@
 import Button from '@mui/material/Button';
+import Image from 'next/image';
 
 const GoogleSignInButton: React.FC = () => {
   return (
@@ -20,12 +21,20 @@ const GoogleSignInButton: React.FC = () => {
         }
       }}
     >
-      <img
+      <Image
         src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
         alt="Google logo"
-        style={{ width: '20px', height: '20px', marginRight: '8px' }}
+        width={20} 
+        height={20}
+        style={{ marginRight: '8px' }}
       />
-      <span style={{ fontSize: '16px', fontWeight: 'bold', color: 'black' }}>
+      <span
+        style={{
+          fontSize: '16px',
+          fontWeight: 'bold',
+          color: 'black',
+        }}
+      >
         Continue with Google
       </span>
     </Button>

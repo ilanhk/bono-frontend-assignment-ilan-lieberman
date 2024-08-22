@@ -1,5 +1,5 @@
 
-import { getCauses } from "@/utils/causes-api";
+import { getCauses } from "@/apis/causes-api";
 import ArrowBackButton from "@/components/ArrowBackButton";
 
 import CauseSelection from "@/components/CauseSelection";
@@ -15,11 +15,9 @@ export default async function CauseSelectionScreen() {
 
   
   return (
-    <div>
+    <div >
       
-      <div className="mt-3 ml-2">
-        <ArrowBackButton />
-      </div>
+      <ArrowBackButton className="cause-black-arrow" />
       
 
       <h1 className="font-bold text-4xl mt-2 ml-2">Cause Selection Screen</h1>
@@ -27,12 +25,7 @@ export default async function CauseSelectionScreen() {
       <h2 className="font-bold text-xl mt-2 ml-3 text-gray-500">Pick 3 causes that you mostly care about:</h2>
 
       <CauseSelection listOfCauses={causes} />
-      
 
-
-
-      
-      
       
     </div>
   );

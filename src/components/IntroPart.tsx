@@ -4,7 +4,7 @@ import { ArrowForward } from '@mui/icons-material';
 
 export default function IntroPart (){
   return (
-    <div className="text-black p-20">
+    <div className="intro-section">
       
       <div >
         <h1 className="font-bold text-5xl mt-20 ml-2">Let Build your non-profit portfolio</h1>

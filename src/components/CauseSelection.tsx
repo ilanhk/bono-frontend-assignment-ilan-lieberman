@@ -27,12 +27,14 @@ interface Cause {
 
 interface CauseSelectionProps {
   listOfCauses: Cause[];
-}
+};
+
+
 
 export default function CauseSelection({ listOfCauses }: CauseSelectionProps) {
   
-  let [count, setCount] = useState(0);
-  let [causes, setCauses] = useState<Cause[]>([]);
+  const [count, setCount] = useState(0);
+  const [causes, setCauses] = useState<Cause[]>([]);
 
   useEffect(() => {
     const causesWithChosen = listOfCauses.map((causeIt) => ({
@@ -47,10 +49,10 @@ export default function CauseSelection({ listOfCauses }: CauseSelectionProps) {
       cause.id === id ? { ...cause, chosen: !bol } : cause
     );
 
-    if (bol === false && count < 3) {
+    if (!bol && count < 3) {
       setCount(count + 1);
       setCauses(updatedCauses);
-    } else if (bol === true && count <= 3 ) {
+    } else if (bol && count <= 3 ) {
       setCount(count - 1);
       setCauses(updatedCauses);
     } 
@@ -58,7 +60,7 @@ export default function CauseSelection({ listOfCauses }: CauseSelectionProps) {
 
   return (
     <div className="m-3">
-      <div className="causesselectioncontainer">
+      <div className="causes-selection-container">
         {causes.map((cause: Cause) => (
           <Card 
             key={cause.id} 
@@ -79,25 +81,14 @@ export default function CauseSelection({ listOfCauses }: CauseSelectionProps) {
               }}
             >{cause.title}</CardContent>
             <CardActions>
-              {cause.chosen === false ? (
-                <Fab 
-                  color="primary" 
-                  aria-label="add" 
-                  onClick={() => onClickHandler(cause.id, false)}
-                  className="fab-button"
-                >
-                  <AddIcon />
-                </Fab>
-              ) : (
-                <Fab 
-                  color="success" 
-                  aria-label="remove" 
-                  onClick={() => onClickHandler(cause.id, true)} 
-                  className="fab-button"
-                >
-                  <Check />
-                </Fab>
-              )}
+              <Fab
+                color={cause.chosen ? "success" : "primary"}
+                aria-label={cause.chosen ? "remove" : "add"}
+                onClick={() => onClickHandler(cause.id, cause.chosen)}
+                className="fab-button"
+              >
+                {cause.chosen ? <Check /> : <AddIcon />}
+              </Fab>
             </CardActions>
           </Card>
         ))}
